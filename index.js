@@ -6,7 +6,12 @@ const app = express();
 app.use(cookieParser());
 
 app.get('/greet', (req, res) => {
-    res.send('Hey there!');
+    console.log(req.cookies);
+
+    // Destructuring name from req.cookies
+    // Giving default value to the name in case there is no cookie with name
+    const {name = "Noname"} = req.cookies;
+    res.send(`Hi there, ${name}`);
 })
 
 app.get('/setname', (req, res) => {
