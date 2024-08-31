@@ -31,6 +31,11 @@ app.get('/getsignedcookie', (req, res) => {
     res.send('Signed fruit and vegetable cookies!');
 })
 
+app.get('/verifysignedcookies', (req, res) => {
+    console.log(req.signedCookies);
+    res.send(req.signedCookies);
+})
+
 // Starting a web server and listening to the connections on the port 3000
 app.listen(3000, () => {
     console.log('Serving on port 3000 !');
