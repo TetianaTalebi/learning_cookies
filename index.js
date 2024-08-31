@@ -3,7 +3,8 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 
 const app = express();
-app.use(cookieParser());
+
+app.use(cookieParser('thisismysecret'));
 
 app.get('/greet', (req, res) => {
     console.log(req.cookies);
